@@ -1,0 +1,1400 @@
+/* CSS FILE */
+
+/* Common Classes */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Armin Grotesk', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+::selection,
+.form {
+    color: black;
+    background-color: rgb(12, 238, 114);
+}
+
+.horizontal {
+    display: flex;
+    flex-direction: row;
+}
+
+.vertical {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Page Loader */
+
+.loaderbg{
+    position: fixed;
+    top: 0;
+    z-index: 10000001;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+.loader{
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    background: linear-gradient(transparent 40%, green);
+    animation: aniNine 2s linear infinite;
+}
+.loader:before{
+    content: '';
+    position: absolute;
+    top: 6px; bottom: 6px;
+    left: 6px; right: 6px;
+    background-color: white;
+    border-radius: 100%;
+    z-index: 2;
+}
+@keyframes aniNine{
+   0%{transform: rotate(0deg);}
+   100%{transform: rotate(360deg);}
+}
+
+/* Navigation Bar */
+
+#navBar {
+    position: fixed;
+    overflow: hidden;
+    flex-wrap: wrap;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 1001;
+    opacity: 0.98;
+    background-color: rgb(250, 249, 247);
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 1.15rem;
+    transition: all 0.4s;
+}
+
+#navBar.mode {
+    background-color: black;
+}
+
+#navBar.mode * {
+    color: white;
+}
+
+.navHide {
+    transform: translateY(-10rem);
+}
+
+#ham {
+    cursor: pointer;
+    height: max-content;
+    margin-right: 5rem;
+}
+
+#ham::after,
+#ham::before {
+    content: "";
+    width: 40px;
+    height: 2px;
+    margin: 5px 0;
+    background-color: black;
+    transition: all 0.3s;
+}
+
+#ham:hover::after,
+#ham:hover::before,
+#ham:hover.mode::before,
+#ham:hover.mode::after {
+    background-color: rgb(4, 199, 92);
+}
+
+#ham.mode::before,
+#ham.mode::after {
+    margin: 0;
+    background-color: white;
+    transform: rotate(45deg);
+}
+
+#ham.mode::after {
+    transform: rotate(-45deg);
+}
+
+#one,
+#two {
+    display: none;
+}
+
+#menu {
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    background-color: black;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 10rem;
+    top: 0;
+    left: -100vw;
+    transition: all 0.3s;
+}
+
+#menu.mode {
+    left: 0;
+}
+
+#menu * {
+    color: white;
+}
+
+#menu img {
+    width: 40vw;
+}
+
+.vision,
+.visit,
+.wheel,
+.stairs,
+.green,
+.invRight,
+.invLeft {
+    transition: all 0.3s;
+}
+
+.logo,
+.donate {
+    transition: all 0.4s;
+}
+
+.vision:hover,
+.visit:hover,
+.logo:hover,
+.wheel:hover,
+.stairs:hover,
+.green:hover {
+    cursor: pointer;
+    color: rgb(4, 199, 92);
+    fill: rgb(4, 199, 92);
+}
+
+.navFlex {
+    align-self: baseline;
+    padding-top: 2rem;
+}
+
+.donate {
+    border-radius: 30px;
+    border: 1px solid black;
+    padding: 0.5rem 2rem;
+}
+
+.donate:hover {
+    border-color: white;
+    background-color: rgb(4, 199, 92);
+    color: white;
+}
+
+.lang {
+    font-size: 0.85rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem;
+}
+
+/* Main Body */
+
+body {
+    overflow-x: hidden;
+    background-color: rgb(250, 249, 247);
+}
+
+main {
+    margin: 9rem 2rem 2rem 2rem;
+}
+
+/* Title */
+
+#title {
+    z-index: -1;
+    position: relative;
+    margin-left: 7rem;
+    font-size: 8rem;
+    letter-spacing: -3px;
+    font-weight: 600;
+    line-height: 0.85em;
+}
+
+.titleNoDelay {
+    animation: aniTwo 0.6s cubic-bezier(0.32, 0, 0.67, 0);
+    animation-delay: 3s;
+}
+
+.titleDelay {
+    animation: aniTwo 0.7s cubic-bezier(0.32, 0, 0.67, 0);
+    animation-delay: 3s;
+}
+
+@keyframes aniTwo {
+    from {
+        transform: translateY(2rem);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+
+@keyframes aniThree {
+    from {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(2rem);
+        opacity: 0;
+    }
+}
+
+/* Carousel Bar */
+
+.carousel {
+    position: relative;
+    top: -5rem;
+    margin: 0 8%;
+}
+
+.miniImg {
+    width: 100%;
+}
+
+.slider {
+    overflow: auto;
+    margin-bottom: 2rem;
+}
+
+.miniCarousel {
+    width: 200%;
+    display: flex;
+}
+
+.miniCar {
+    width: calc(100vw - 4rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 1rem;
+}
+
+.miniSwipe {
+    align-self: center;
+}
+
+.miniInfo {
+    font-size: 2.22rem;
+    letter-spacing: -1px;
+    font-weight: 450;
+}
+
+.miniLink {
+    color: rgb(5, 199, 93);
+}
+
+.car {
+    justify-content: center;
+    padding-left: 1rem;
+}
+
+.carText {
+    justify-content: end;
+    animation: aniTwo 0.6s cubic-bezier(0.32, 0, 0.67, 0);
+    animation-delay: 3s;
+}
+
+.carInfo {
+    font-size: 2.8rem;
+    word-spacing: -2px;
+    letter-spacing: -1px;
+    line-height: 2.8rem;
+}
+
+.carLink {
+    color: rgb(5, 199, 93);
+    font-size: 1.8rem;
+    margin: 2rem 0;
+}
+
+.carLink:hover {
+    color: black;
+}
+
+.carArrow {
+    font-weight: 100;
+}
+
+.carLink:hover>.carArrow {
+    transition: all 0.2s;
+    transform: translateX(6px);
+}
+
+#carOneImg {
+    width: 60%;
+    animation: aniFive 1s cubic-bezier(0.33, 1, 0.68, 1);
+    animation-delay: 3s;
+}
+
+#carTwoImg {
+    width: 60%;
+}
+
+@keyframes aniFour {
+    from {
+        transform: none;
+        opacity: 1;
+    }
+
+    to {
+        transform: rotate(-20deg) translate(-300px, 150px);
+        opacity: 0;
+    }
+}
+
+@keyframes aniFive {
+    from {
+        transform: rotate(20deg) translate(-50px, 300px);
+        opacity: 0;
+    }
+
+    to {
+        transform: none;
+        opacity: 1;
+    }
+}
+
+#leftArrow {
+    position: absolute;
+    transition: all 0.35s;
+    transform: rotate(180deg);
+    top: 45%;
+    left: -8%;
+}
+
+#rightArrow {
+    transition: all 0.35s;
+    position: absolute;
+    top: 45%;
+    right: -8%;
+}
+
+#leftArrow:hover {
+    cursor: pointer;
+    transform: translateX(-3px) rotate(180deg);
+}
+
+#rightArrow:hover {
+    cursor: pointer;
+    transform: translateX(3px);
+}
+
+#carTime {
+    position: absolute;
+    top: 50px;
+    right: -50px;
+    animation: aniSix 4s, aniOne 40s linear infinite;
+    animation-delay: 3s;
+}
+
+@keyframes aniOne {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes aniSix {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes aniSeven {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+/* Invite Boxes */
+
+#miniInvite {
+    font-size: 4.3rem;
+    line-height: 4.2rem;
+    letter-spacing: -2px;
+    font-weight: 800;
+    margin-bottom: -8rem;
+    display: none;
+    text-align: center;
+}
+
+#invite {
+    transform: translateY(3rem);
+    display: block;
+    font-size: 4.3rem;
+    line-height: 4.2rem;
+    letter-spacing: -2px;
+    margin-right: 10%;
+    font-weight: 600;
+    text-align: right;
+}
+
+.inv {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin-right: 8vw;
+    margin-bottom: 6rem;
+    padding: 1rem;
+}
+
+.invLeft {
+    transform: rotate(-90deg);
+}
+
+.invRight {
+    transform: rotate(90deg);
+}
+
+.vid,
+.video {
+    position: relative;
+}
+
+.img,
+.image {
+    position: absolute;
+    opacity: 0;
+    border-radius: 5px;
+    top: 0;
+    left: 0;
+    width: 38vw;
+}
+
+#invOne:hover .invLeft {
+    stroke: rgb(4, 199, 92);
+    transform: rotate(-90deg) translateY(-8px);
+}
+
+#invTwo:hover .invRight {
+    stroke: rgb(4, 199, 92);
+    transform: rotate(90deg) translateY(-8px);
+}
+
+.invVid {
+    width: 38vw;
+    border-radius: 5px;
+}
+
+.invAddress {
+    justify-content: space-between;
+    padding: 0 0 0.5rem 2rem;
+}
+
+.invPlace {
+    font-size: 3rem;
+    font-weight: 450;
+    line-height: 2.6rem;
+}
+
+.invLocate {
+    font-size: 1.2rem;
+}
+
+.invExtra {
+    padding: 0.5rem 0;
+    margin: 1rem 4vw;
+    margin-top: 5rem;
+    justify-content: space-between;
+}
+
+.svg {
+    position: relative;
+    width: max-content;
+}
+
+.stick {
+    position: absolute;
+    background-color: rgb(4, 199, 92);
+    opacity: 0;
+    transition: all 0.5s;
+    width: 250px;
+    height: 90px;
+    right: -250px;
+    top: -90px;
+    font-size: 1.2rem;
+    text-align: center;
+    color: white;
+    padding: 0.3rem;
+    transform: translateX(-10px);
+}
+
+.stairs:hover~.stick,
+.wheel:hover~.stick {
+    opacity: 1;
+    transform: none;
+}
+
+.invDirections {
+    font-size: 1.2rem;
+    width: max-content;
+}
+
+.invDirections:hover,
+.projLink:hover {
+    cursor: pointer;
+    color: rgb(4, 199, 92);
+}
+
+.invDirections:hover>.invArrow,
+.event:hover .eventArrow {
+    transform: translate(3px, -3px);
+}
+
+.invArrow,
+.eventArrow,
+.eventText {
+    transition: all 0.3s;
+}
+
+#invTwo>.vid {
+    order: 100;
+    margin-left: 2rem;
+}
+
+.miniVideo {
+    width: 100%;
+    margin: 2rem 0;
+}
+
+/* Text with Back-Video */
+
+#greenWay {
+    font-size: 4.3rem;
+    line-height: 4.2rem;
+    letter-spacing: -2px;
+    font-weight: 600;
+    width: 70vw;
+    margin-left: 10vw;
+}
+
+#bgVideo {
+    color: rgb(4, 197, 91);
+}
+
+#cursor {
+    width: 500px;
+    height: 300px;
+    position: absolute;
+    display: none;
+    z-index: -2;
+}
+
+#lotMore {
+    display: flex;
+    margin: 3rem 0 6rem 10vw;
+    gap: 10vw;
+    align-items: center;
+}
+
+#lotMore div {
+    font-size: 1.7rem;
+}
+
+/* Project Boxes */
+
+.projects {
+    position: relative;
+    padding: 600px 0 250px 10vw;
+}
+
+.project {
+    position: absolute;
+    gap: 1rem;
+}
+
+.projectVideo:hover video {
+    transform: scale(1.2) translateX(-20px);
+    transition: all 0.4s;
+}
+
+.projectName {
+    position: relative;
+    width: 200px;
+    font-size: 3rem;
+    font-weight: 450;
+}
+
+#projectNameTwo {
+    width: max-content;
+}
+
+.projectName div {
+    font-size: 0.8rem;
+    width: max-content;
+}
+
+.projText {
+    width: 38vw;
+    font-size: 2rem;
+}
+
+.projLink {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    align-items: baseline;
+}
+
+.projLink:hover .projArrow {
+    transform: translateX(10px);
+}
+
+#project1 {
+    top: 0;
+    left: 5vw;
+}
+
+#project1 .video,
+#project1 image {
+    width: 400px;
+    height: 500px;
+    border-radius: 5px;
+}
+
+#project1,
+#project1 * {
+    max-width: 400px;
+    max-height: 500px;
+}
+
+#project2 {
+    top: 30%;
+    right: 0;
+}
+
+#project2 .video,
+#project2 image {
+    width: 500px;
+    height: 280px;
+    border-radius: 5px;
+}
+
+#project2,
+#project2 * {
+    max-width: 500px;
+    max-height: 280px;
+}
+
+#project3 {
+    bottom: 300px;
+    left: 40%;
+}
+
+#project3 .video,
+#project3 image {
+    width: 160px;
+    height: 200px;
+    border-radius: 5px;
+}
+
+#project3,
+#project3 * {
+    max-width: 160px;
+    max-height: 200px;
+}
+
+.miniProjects {
+    align-items: center;
+    margin: 8rem 0;
+}
+
+.miniProject {
+    margin-top: 2rem;
+    align-items: flex-end;
+    gap: 2rem;
+    width: 90%;
+}
+
+.miniImage {
+    width: 40vw;
+}
+
+.miniText {
+    font-size: 2 rem;
+    width: 80vw;
+}
+
+#miniParallax {
+    position: relative;
+    font-size: 1.2rem;
+    margin: -10rem 0 20rem 0;
+}
+
+.miniName {
+    font-size: 3rem;
+    font-weight: 450;
+}
+
+.theCut {
+    justify-content: space-between;
+}
+
+.theCut>img {
+    width: 60vw;
+}
+
+/* Donate Box */
+
+.box {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    position: relative;
+    gap: 3rem;
+    width: 80vw;
+    background-color: white;
+    font-size: 1.3rem;
+    padding-right: 1.5rem;
+}
+
+.box:hover img {
+    transform: scale(1.03);
+}
+
+.box:hover .boxDetails,
+.event:hover>.eventLink {
+    color: rgb(4, 189, 84);
+}
+
+.boxDetails {
+    transition: all 0.35s;
+}
+
+.box:hover .boxArrow,
+.projLink:hover .projArrow {
+    transform: translateX(3px);
+}
+
+.boxArrow {
+    transition: transform 0.5s;
+}
+
+.boxText {
+    padding: 1.5rem 0;
+    justify-content: space-between;
+}
+
+.boxTitle {
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+.boxImg {
+    width: 50%;
+    overflow: hidden;
+}
+
+.boxImg img {
+    width: 100%;
+    transition: all 0.8s;
+}
+
+.eventTime {
+    position: absolute;
+    top: -50px;
+    right: 50px;
+    animation: aniOne 40s linear infinite;
+}
+
+/* Calendar Button */
+
+.eventCal {
+    position: relative;
+    display: flex;
+    width: max-content;
+    gap: 1rem;
+    left: 70vw;
+    margin: 5rem 8vw 0 0;
+}
+
+/* Events Grid */
+
+.gridTitle {
+    position: absolute;
+    top: 8rem;
+    left: -4rem;
+    transform: rotate(-90deg);
+    font-weight: 450;
+    word-spacing: -2px;
+    letter-spacing: -1px;
+    font-size: 3rem;
+    width: max-content;
+}
+
+.events {
+    position: relative;
+}
+
+.eventGrid {
+    margin: 2rem 5vw 0 15vw;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 2rem;
+}
+
+.gridAppear {
+    display: none;
+}
+
+.event {
+    height: max-content;
+}
+
+.event:hover .eventImg {
+    transform: translateY(-7px);
+}
+
+.eventImg {
+    width: 100%;
+    transition: all 0.3s;
+}
+
+.eventTitle {
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+.eventLink {
+    font-size: 1rem;
+}
+
+/* Input Forms */
+
+.form {
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 0;
+}
+
+#formTitle {
+    font-size: 1.2rem;
+}
+
+#formInput,
+.searchArea {
+    margin-top: 2rem;
+    position: relative;
+    height: 3rem;
+}
+
+#formEmail,
+#search {
+    outline: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    width: 50vw;
+    border-bottom: 1px solid rgb(1, 187, 85);
+    transition: all 0.3s;
+}
+
+#search {
+    border: none;
+}
+
+#formHolder,
+#searchText {
+    position: absolute;
+    top: 0;
+    color: rgb(15, 129, 67);
+    font-size: 2rem;
+    left: 0;
+    transition: all 0.3s;
+}
+
+.donateHam {
+    border-radius: 30px;
+    border: 1px solid black;
+    background-color: rgb(4, 199, 92);
+    padding: 0.6rem 2.2rem;
+    transition: all 0.3s;
+    font-weight: 450;
+}
+
+.donateHam:hover {
+    background-color: black;
+    border: 1px solid rgb(4, 199, 92);
+}
+
+#formArrow {
+    stroke: rgb(15, 129, 67);
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: all 0.3s;
+}
+
+#formArrow:hover {
+    transform: translateX(8px);
+    cursor: pointer;
+}
+
+/* Contact Footer */
+
+.contact {
+    background-color: rgb(20, 18, 20);
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 4rem;
+    gap: 3rem;
+}
+
+.contact * {
+    color: white;
+}
+
+.contactTitle {
+    font-weight: 450;
+}
+
+.contactText {
+    font-size: 1.8rem;
+    margin-top: 1.6rem;
+}
+
+.coin {
+    position: relative;
+    grid-row: 1/3;
+}
+
+.coinVideo {
+    width: 240px;
+    padding: 2.5rem;
+    border-radius: 50%;
+}
+
+.coinBorder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: aniOne 40s linear infinite;
+}
+
+.instagram,
+.twitter,
+.facebook {
+    fill: white;
+    transition: all 0.3s;
+    margin-right: 1rem;
+}
+
+.instagram:hover {
+    fill: rgb(240, 0, 117);
+}
+
+.twitter:hover {
+    fill: rgb(30, 155, 240);
+}
+
+.facebook:hover {
+    fill: rgb(17, 108, 228);
+}
+
+.carHide {
+    display: none;
+}
+
+/********************************/
+
+/* Media Queries */
+
+@media screen and (min-width: 1400px) {
+    .eventGrid {
+        grid-template-columns: auto auto auto auto auto;
+    }
+
+    #project2 {
+        right: 10%;
+    }
+
+    .gridAppear {
+        display: block;
+    }
+
+    .eventTitle {
+        font-size: 1.7rem;
+        font-weight: 450;
+    }
+}
+
+@media screen and (min-width: 1900px) {
+
+    #project1,
+    #project1 * {
+        max-width: 600px;
+        max-height: 750px;
+    }
+
+    #project2,
+    #project2 * {
+        max-width: 750px;
+        max-height: 420px;
+    }
+
+    #project3,
+    #project3 * {
+        max-width: 240px;
+        max-height: 300px;
+    }
+
+    .projectName {
+        color: white;
+        text-shadow: 2px 2px 3px black;
+    }
+
+    .projText {
+        margin-top: 6rem;
+    }
+
+    .stick {
+        width: 300px;
+        height: 120px;
+        top: -120px;
+        right: -300px;
+    }
+}
+
+@media screen and (min-width: 1900px) {
+    * {
+        font-size: larger;
+    }
+
+    #project2 {
+        right: 15%;
+    }
+
+    .contact {
+        justify-content: center;
+        padding: 5rem 0;
+        gap: 2rem 4rem;
+    }
+
+    .coin {
+        align-self: center;
+        justify-self: center;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    #formEmail {
+        width: 60vw;
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    .contact * {
+        font-size: 1.3rem
+    }
+
+    .box {
+        font-size: 1rem;
+    }
+
+    .boxTitle {
+        font-size: 2.4rem;
+    }
+}
+
+@media screen and (max-width: 1060px) {
+    .events {
+        flex-direction: column;
+    }
+
+    .eventGrid {
+        margin: 2rem 5rem;
+    }
+
+    .gridTitle {
+        width: auto;
+        text-align: center;
+        position: inherit;
+        transform: none;
+        font-size: 4rem;
+        font-weight: 600;
+        top: 0;
+        left: 0;
+    }
+
+    .eventCal {
+        left: 0;
+        margin: 2rem 0;
+    }
+
+    .eventTime {
+        top: 90%;
+    }
+
+    .box {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: x-large;
+    }
+
+    .boxText {
+        margin: -1rem 0 1rem 0;
+    }
+
+    .boxDetails {
+        margin: 0.5rem 0;
+    }
+
+    .boxImg {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .contact {
+        grid-template-columns: auto;
+        justify-content: center;
+    }
+
+    .contact * {
+        font-size: 2rem;
+    }
+
+    .gridHide {
+        display: none;
+    }
+
+    .gridLater {
+        order: 1001;
+        font-size: 1rem;
+        width: max-content;
+    }
+
+    .coin {
+        justify-self: center;
+    }
+
+    .contactTitle {
+        text-align: center;
+    }
+
+    .contactText {
+        text-align: center;
+    }
+
+    #title {
+        margin: 0 5vw;
+    }
+
+    #greenWay {
+        width: 90%;
+        margin: 1rem;
+        font-size: 4rem;
+    }
+
+    .big {
+        display: none;
+    }
+
+    .small {
+        display: block;
+    }
+
+    .stick {
+        left: -250px;
+    }
+}
+
+
+@media screen and (min-width: 1060px) {
+    .big {
+        display: block;
+    }
+
+    .small {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 860px) {
+
+    #title {
+        font-size: 6rem;
+    }
+
+    .eventGrid {
+        grid-template-columns: auto;
+        margin: 0;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .event {
+        width: 100%;
+    }
+
+    #formEmail {
+        width: 80vw;
+    }
+
+    #miniInvite {
+        display: block;
+    }
+
+    #invite {
+        visibility: hidden;
+    }
+
+    .inv {
+        margin: 5rem 0;
+        grid-template-columns: auto auto;
+        margin: 0;
+    }
+
+    .vid {
+        grid-column: 1/3;
+        width: 90%;
+    }
+
+    .invExtra {
+        align-items: flex-end;
+    }
+
+    .vid * {
+        width: 100%;
+    }
+
+    #invTwo>.vid {
+        order: 0;
+        margin: 0;
+    }
+
+    .invPlace,
+    .invAddress {
+        margin: 1rem 0;
+    }
+
+    .invRight,
+    .invLeft {
+        transform: none;
+    }
+
+    #invTwo:hover .invRight,
+    #invOne:hover .invLeft {
+        transform: translateY(-8px);
+    }
+}
+
+@media screen and (max-width: 510px) {
+
+    .gridTitle {
+        font-size: 3rem;
+    }
+
+    .miniName {
+        font-size: 1.8rem;
+    }
+
+    #formTitle {
+        font-size: 0.8rem;
+    }
+
+    #formHolder {
+        font-size: 1.5rem;
+    }
+
+    #miniInvite {
+        font-size: 3rem;
+    }
+
+    #title {
+        font-size: 5rem;
+    }
+
+    #three,
+    #five,
+    #six {
+        display: none;
+    }
+
+    #navBar {
+        min-height: 100px;
+        justify-content: space-around;
+    }
+
+    #one {
+        order: 101;
+        width: 90vw;
+    }
+}
+
+@media screen and (max-width: 460px) {
+
+    .gridTitle {
+        font-size: 2.4rem;
+    }
+
+    .invExtra {
+        width: 20vw;
+    }
+
+    .inv * {
+        font-size: 0.8rem;
+    }
+
+    #greenWay {
+        font-size: 3rem;
+        line-height: 3rem;
+    }
+
+    .invPlace {
+        font-size: 1.7rem;
+    }
+
+    .vid,
+    .vid * {
+        width: 100%;
+    }
+
+    .inv svg {
+        width: 10vw;
+    }
+
+    #title {
+        font-size: 4rem;
+    }
+}

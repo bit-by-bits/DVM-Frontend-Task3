@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Armin Grotesk';
+    src: local('Armin Grotesk SemiBold'), local('Armin-Grotesk-SemiBold'),
+        url('ArminGrotesk-SemiBold.woff2') format('woff2'),
+        url('ArminGrotesk-SemiBold.woff') format('woff'),
+        url('ArminGrotesk-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+  }

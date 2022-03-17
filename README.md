@@ -1,2 +1,2 @@
 # DVM-Frontend-Task3
-To clone 'therailpark.org' with responsiveness
+To clone the official website of 'therailpark.org'

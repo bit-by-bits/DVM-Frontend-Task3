@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Armin Grotesk';
+    src: local('Armin Grotesk Ultra Bold'), local('Armin-Grotesk-Ultra-Bold'),
+        url('ArminGrotesk-UltraBold.woff2') format('woff2'),
+        url('ArminGrotesk-UltraBold.woff') format('woff'),
+        url('ArminGrotesk-UltraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+  }
