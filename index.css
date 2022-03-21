@@ -1251,6 +1251,10 @@ main {
 }
 
 @media screen and (max-width: 860px) {
+    
+    #menu img {
+        width: 50vw;
+    }
 
     #title {
         font-size: 6rem;
@@ -1320,6 +1324,10 @@ main {
 }
 
 @media screen and (max-width: 510px) {
+    
+    #menu img {
+        width: 65vw;
+    }
 
     .gridTitle {
         font-size: 3rem;
